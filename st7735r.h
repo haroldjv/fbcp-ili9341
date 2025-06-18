@@ -16,11 +16,13 @@
 #define DISPLAY_WRITE_PIXELS 0x2C
 
 #if defined(ST7789) || defined(ST7789VW)
-#define DISPLAY_NATIVE_WIDTH 240
+#define DISPLAY_NATIVE_WIDTH 320
 #define DISPLAY_NATIVE_HEIGHT 240
+#define DISPLAY_ACTUAL_HEIGHT 240
 #elif defined(ST7735R)
 #define DISPLAY_NATIVE_WIDTH 128
 #define DISPLAY_NATIVE_HEIGHT 160
+#define DISPLAY_ACTUAL_HEIGHT 240
 #elif defined(ST7735S)
 // ST7735S displays are 128x128 pixels, but they have a somewhat odd offset that X,Y=(0,0) is not top-left corner pixel, but X,Y=(2,1) is.
 // Therefore consider the display two pixels wider and one pixel higher, and add a constant offset of X=+2, Y=+1 via the DISPLAY_COVERED_* mechanism.
